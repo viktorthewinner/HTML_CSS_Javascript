@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orașe</title>
+  <link rel="stylesheet" href="CSS/cities.css"> <!-- Linking CSS -->
+ 
+</head>
+<body>
+  <nav>
+    <label class="logo">Orașe</label>
+    <img src="pics/logo.jpg" class="logo_pic" alt="Logo">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Introducere</a></li>
+      <li><a href="music.html">Muzică</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="people.html">Persoane</a></li>
+      <li><a href="cities.html" class="active">Orașe</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Căutare orașe</h2>
+    <div class="autocomplete-container">
+      <input type="text" id="autocomplete-input" placeholder="Începe să scrii un oraș...">
+      <div id="autocomplete-results" class="autocomplete-results"></div>
+    </div>
+  </section>
+  
+  <section>
+    <h2>Orașe Favorite</h2>
+    <ul id="favorite-cities-list"></ul> <!-- Lista de orașe favorite -->
+  </section>
+  
+  <section>
+    <h2>Vremea în oraș</h2>
+    <div id="weather-card" style="display: none;">
+      <div id="city"></div>
+      <div id="forecast-container"></div> <!-- Container pentru prognoza pe 5 zile -->
+    </div>
+    <div id="weather-spinner" style="display: none;">
+      <div class="spinner"></div> <!-- Spinner-ul de încărcare -->
+    </div>
+  </section>
+  
+
+  <!-- Script pentru funcționalitatea orașe -->
+  <script src="JS/city_script.js"></script>
+
+  <!-- Script pentru vreme -->
+  <script src="JS/weather.js"></script>
+
+  <!-- Script pentru actualizarea imaginii de fundal -->
+  <script src="JS/background.js"></script>
+   
+</body>
+</html>

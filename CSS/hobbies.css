@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background: black;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav .logo_pic {
+    height: 50px;
+    margin-top: 15px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li {
+    color: white;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 5px 10px;
+}
+
+nav ul li a.active {
+    background-color: #575757;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        background: black;
+    }
+
+    nav ul.show {
+        display: flex; 
+    }
+
+    nav ul li {
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+section h1:hover {
+    color: #007BFF;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #555;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+section h2:hover {
+    color: #007BFF;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+section p:hover {
+    color: #333;
+}
+
+section .hobbies {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .hobbies:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 28px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+}
+
+
+
+.slideshow {
+    position: relative;
+    /*overflow: hidden;*/
+    height: 500px; /* Înălțimea slideshow-ului */
+}
+
+.slides {
+    height: 250px; /* Înălțimea secțiunii cu slide-uri */
+	width: 100%;
+    position: relative; /* Controlul poziției slide-urilor */
+}
+
+.slides li {
+    height: 250px; /* Înălțimea fiecărui slide */
+    position: absolute; /* Poziționare absolută pentru a suprapune slide-urile */
+    z-index: 1; /* Z-index implicit pentru toate slide-urile */
+    display: none; /* Ascunde toate slide-urile în mod implicit */
+}
+
+.slides li:target {
+    z-index: 3; /* Aducerea slide-ului țintă în față */
+    display: block; /* Afișarea slide-ului țintă */
+    animation: slide 1s forwards; /* Animație pentru slide-ul țintă */
+}
+
+.slides li:not(:target) {
+    display: none; /* Asigură-te că slide-urile care nu sunt active rămân ascunse */
+    animation: hidden 1s forwards; /* Animație pentru slide-urile non-țintă */
+}
+
+.slides img {
+    height: 250px; /* Înălțimea imaginilor din slide-uri */
+    width: 100%; /* Asigură-te că imaginea ocupă întreaga lățime a slide-ului */
+    object-fit: cover; /* Asigură un aspect corect al imaginilor */
+    object-position: top; /* Poziționare corectă a imaginii în slide */
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column; /* Miniaturile sunt afișate vertical */
+    line-height: 0;
+    margin-top: 10px; /* Spațiu deasupra miniaturilor */
+}
+
+.thumbnails a {
+    display: block; /* Fiecare miniatură este un bloc */
+}
+
+.thumbnails img {
+    height: 100px; /* Înălțimea imaginilor miniaturilor */
+    width: auto; /* Lățimea se ajustează automat pentru a menține raportul de aspect */
+    object-fit: cover; /* Asigură un aspect corect pentru miniaturi */
+    object-position: top; /* Poziționare corectă a imaginilor miniaturilor */
+    margin-bottom: 5px; /* Spațiu între miniaturi */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-100%); /* Începe de sus */
+    }
+    100% {
+        transform: translateY(0%); /* Se oprește la poziția inițială */
+    }
+}
+
+@keyframes hidden {
+    0% {
+        z-index: 2; /* Mentine z-index */
+    }
+    100% {
+        z-index: 2; /* Mentine z-index */
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .logo_pic {
+        height: 40px;
+    }
+}
+
+/* Navigation dots */
+.dot {
+    height: 15px; /* Height of the dots */
+    width: 15px; /* Width of the dots */
+    margin: 0 2px; /* Space between dots */
+    background-color: #bbb; /* Default dot color */
+    border-radius: 50%; /* Round dots */
+    display: inline-block; /* Align dots inline */
+    transition: background-color 0.6s ease; /* Smooth transition for active dot */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.active, .dot:hover {
+    background-color: #717171; /* Color for active or hovered dot */
+}

@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background: black;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav .logo_pic {
+    height: 50px;
+    margin-top: 15px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav ul li {
+    color: white;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    padding: 5px 10px;
+}
+
+nav ul li a.active {
+    background-color: #575757;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+section{
+
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.spinner {
+    margin: 100px auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        background: black;
+    }
+
+    nav ul.show {
+        display: flex; 
+    }
+
+    nav ul li {
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
+
+#favorite-cities-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #favorite-cities-list li {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #favorite-cities-list button {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #favorite-cities-list button:hover {
+    color: darkred;
+  }
+  
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .logo_pic {
+        height: 40px;
+    }
+}
+
+/* Navigation dots */
+.dot {
+    height: 15px; /* Height of the dots */
+    width: 15px; /* Width of the dots */
+    margin: 0 2px; /* Space between dots */
+    background-color: #bbb; /* Default dot color */
+    border-radius: 50%; /* Round dots */
+    display: inline-block; /* Align dots inline */
+    transition: background-color 0.6s ease; /* Smooth transition for active dot */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.active, .dot:hover {
+    background-color: #717171; /* Color for active or hovered dot */
+}
+
